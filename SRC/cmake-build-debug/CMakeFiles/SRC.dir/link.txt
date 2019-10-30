@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SRC.dir/Main.cpp.o CMakeFiles/SRC.dir/TestDnaSequence.cpp.o  -o SRC 

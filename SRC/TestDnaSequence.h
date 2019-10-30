@@ -8,6 +8,7 @@
 #include <iostream>
 #include "DnaSequence.h"
 #include <string>
+#include "CommandLine.h"
 void test_dna();
 
 

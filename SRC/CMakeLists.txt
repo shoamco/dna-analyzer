@@ -11,4 +11,5 @@ add_executable(SRC
         Nucleotide.h
         NucleotideException.h
         TestDnaSequence.cpp
-        TestDnaSequence.h)
+        TestDnaSequence.h
+       )

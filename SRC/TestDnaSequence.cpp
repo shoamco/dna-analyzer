@@ -154,102 +154,13 @@ TEST(DnaSequenceTests, DISABLED_ComperDnaFailed) {
     EXPECT_TRUE(dnaSequence1 == dnaSequence2);
 }
 
-//*********** my TEST************
-void print(std::string message) {
-    std::cout << message << std::endl;
+/**** dna-analyzer-design ****/
+TEST(DnaSequenceTests, getCommand) {
+
+}
+void test_dna(){
+    std::cout<<"in test getCommand !!!!!\n";
+    CommandLine commandLine;
+    commandLine.GetCommand();
 }
 
-void test_dna() {
-
-//    ******* test CTOR *****
-    print("********************\n*    test CTOR     *\n*********************\n ");
-    DnaSequence dnaSequence("AGCTAAAA");
-    std::cout << dnaSequence;
-    DnaSequence dnaSequence1("TTTTTT");
-    std::cout << dnaSequence1;
-
-
-    char c[] = "AAAA";
-
-    DnaSequence dnaSequence2(c);
-    std::cout << dnaSequence2;
-
-//    ******* test copy CTOR *****
-    print("**************************\n    test copy CTOR     \n**************************\n ");
-
-    DnaSequence dnaSequence3(dnaSequence2);
-    std::cout << dnaSequence3;
-
-    dnaSequence3 = dnaSequence;
-    std::cout << dnaSequence3;
-
-    //********* test assignment operator *****
-    print("**************************\n    test assignment operator     \n**************************\n ");
-    dnaSequence3 = "TATATAA";
-    std::cout << dnaSequence3;
-
-
-    dnaSequence3 = dnaSequence1;
-    std::cout << dnaSequence3;
-
-//********* test operator == *****
-    print("**************************\n    test operator ==     \n**************************\n ");
-
-    std::cout << "dnaSequence3 == dnaSequence3   " << (dnaSequence3 == dnaSequence3) << std::endl;
-    std::cout << "dnaSequence3 == dnaSequence2   " << (dnaSequence3 == dnaSequence2) << std::endl;
-
-    //********* test operator != *****
-    print("**************************\n    test operator !=      \n**************************\n ");
-
-    std::cout << "\ndnaSequence3!= dnaSequence3   " << (dnaSequence3 != dnaSequence3) << std::endl;
-    std::cout << "dnaSequence3 != dnaSequence2   " << (dnaSequence3 != dnaSequence2) << std::endl;
-
-
-    //********* test operator [] *****
-    print("**************************\n    test operator []      \n**************************\n ");
-    dnaSequence3[1] = 'A';//set value
-//    Nucleotide nucleotide = dnaSequence3[1];//get value
-    std::cout << "dnaSequence3[1]   " << dnaSequence3[1] << std::endl;
-
-
-    //********* test exception*****
-    print("**************************\n    test exception -invalid nucleotide     \n**************************\n ");
-
-    try {
-        DnaSequence dnaSequence4("PPPPP");
-    }
-    catch (char const *e) {
-        print("catch exception -invalid nucleotide");
-    }
-
-//   *******test  getSlice
-    print("**************************\n  test  getSlice    \n**************************\n ");
-    std::cout << "dnaSequence3 " << dnaSequence3;
-    std::cout << "dnaSequence3.getSlice(1,3) " << dnaSequence3.getSlice(1, 3);
-
-
-    //************* FindSubsequence************
-    print("**************************\n  test  FindSubsequence    \n**************************\n ");
-
-
-    DnaSequence dnaSequence9("AGACACACG");
-    DnaSequence sub_dna("CACAC");
-    size_t real_ans = 3;
-    size_t my_ans = dnaSequence9.FindSubsequence(sub_dna);
-
-    std::cout << "real_ans " << real_ans << "  my_ans" << my_ans << std::endl;
-
-    //************* getPairing************
-    print("**************************\n  test  getPairing    \n**************************\n ");
-    DnaSequence dnaSequence11("GTGC");
-    DnaSequence real_ans1("GCAC");
-
-    DnaSequence my_ans1 = dnaSequence.getPairing();
-    std::cout << "real_ans1  " << real_ans1 << ", my_ans1 " << my_ans1 << std::endl;
-//************* getPairing************
-//    print("**************************\n  test  ReadDnaSequenceFromFile    \n**************************\n ");
-//    const char *file_name = "input.txt";
-//    std::string str = ReadDnaSequenceFromFile(file_name);
-//    DnaSequence dna_file(str);
-//    std::cout << dna_file;
-}
