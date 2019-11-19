@@ -11,25 +11,37 @@
 #include "DnaSequence.h"
 #include <string>
 #include <vector>
+#include <map>
 #include "DnaCreatorFactory.h"
 #include "NewCreatorDnaSequence.h"
 #include "vector"
+/**
+ *                   Command Line Interface
+  The command line interface allows interaction with the user.Throughout that interface,
+the user can enter their input and see the application's output.
+ The prompt of the CLI is :
+ > cmd >>>
 
+ * **/
 class CommandLine {
 public:
     void CommandParser();
 
     void GetCommand();
+    void RunAnalysisCommand();
 
 private:
     std::string command;
 
 };
+inline void CommandLine::RunAnalysisCommand(){
 
+}
 inline void CommandLine::GetCommand() {
     std::string cmd;
     bool flag_quit = false;
-
+    std::map< std::string, int> map_command;
+    map_command.insert ( std::pair<std::string,int>( std::string("new"),100) );
     while (!flag_quit) {
         std::cout << "enter command ";
       std::string input_line;
@@ -46,7 +58,7 @@ inline void CommandLine::GetCommand() {
         std::cout <<"vector_words[0] "<<vector_words[0]<<std::endl;
         std::cout <<"vector_words[1] "<<vector_words[1]<<std::endl;
 
-        if (vector_words[0] == std::string("new")) {
+        if (vector_words[0] == std::string("new")) {//cmd >>> new <sequence> [@<sequence_name>]
             std::cout << "new command\n";
 //            parser.add(details);
 //            std::cout << vector_words;

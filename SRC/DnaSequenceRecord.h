@@ -1,0 +1,8 @@
+//
+// Created by shoam on 10/29/19.
+//
+
+#ifndef SRC_DNASEQUENCERECORD_H
+#define SRC_DNASEQUENCERECORD_H
+
+#endif //SRC_DNASEQUENCERECORD_H
