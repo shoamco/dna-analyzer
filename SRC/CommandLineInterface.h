@@ -5,7 +5,7 @@
 #ifndef SRC_GETCOMMANDLINE_H
 #define SRC_GETCOMMANDLINE_H
 
-#include "CommandLine.h"
+#include "CommandLineInterface.h"
 #include <sstream>
 #include <iostream>
 #include "DnaSequence.h"
@@ -19,11 +19,75 @@
  *                   Command Line Interface
   The command line interface allows interaction with the user.Throughout that interface,
 the user can enter their input and see the application's output.
+
  The prompt of the CLI is :
  > cmd >>>
 
+ Sequence Creation Commands:
+ new:
+    > cmd >>> new <sequence> [@<sequence_name>]
+ load:
+    > cmd >>> load <file_name> [@<sequence_name>]
+ dup:
+    > cmd >>> dup <seq> [@<new_seq_name>]
+
+
+ Sequence Manipulation Commands:
+ replace:
+    > cmd >>> replace <seq> <index> <new_letter> [:[@<new_seq_name>|@@]]
+ concat:
+     > cmd >>> concat <seq_1> <seq_2> [: [@<new_seq_name>|@@]]
+ pair:
+    > cmd >>> pair <seq> [: [@<new_seq_name>|@@]]
+
+ Sequence Management Commands:
+
+ rename:
+     > cmd >>> rename <seq> @<new_name>
+ reenum
+    > cmd >>> reenum
+ save:
+    > cmd >>> save <seq> [<filename>]
+ del:
+    > cmd >>> del <seq>
+
+ Sequence Analysis Commands:
+ len:
+    > cmd >>> len <seq_id>
+
+ find:
+    > cmd >>> find <seq_to_find_in> <seq_to_be_found>
+    > cmd >>> find <seq> <expressed_sub_seq>
+
+ count:
+    > cmd >>> count <seq> <expressed_sub_seq>
+    > cmd >>> count <seq_to_find_in> <seq_to_be_found>
+
+ findall:
+    > cmd >>> findall <seq> <expressed_sub_seq>
+    > cmd >>> findall <seq_to_find_in> <seq_to_be_found>
+
+Control Commands:
+ help:
+    > cmd >>> help [<command>]
+
+ list:
+    > cmd >>> list
+
+ show:
+    > cmd >>>show `<seq>` [<num_chars>]
+ quit:
+    > cmd >>> quit
+
+
+ Command Results Labels:
+
+ Show Labels:
+    cmd >>> labels
+    ....
+
  * **/
-class CommandLine {
+class CommandLineInterface {
 public:
     void CommandParser();
 
@@ -34,14 +98,17 @@ private:
     std::string command;
 
 };
-inline void CommandLine::RunAnalysisCommand(){
+inline void CommandLineInterface::RunAnalysisCommand(){
 
 }
-inline void CommandLine::GetCommand() {
+inline void CommandLineInterface::GetCommand() {
     std::string cmd;
     bool flag_quit = false;
     std::map< std::string, int> map_command;
-    map_command.insert ( std::pair<std::string,int>( std::string("new"),100) );
+    /** map for all command,key-name of command ,value-pointer to function command**/
+
+//    map_command.insert( std::pair<std::string,NewCreatorDnaSequence>( std::string("new"),new NewCreatorDnaSequence));
+
     while (!flag_quit) {
         std::cout << "enter command ";
       std::string input_line;
@@ -55,11 +122,11 @@ inline void CommandLine::GetCommand() {
                 vector_words.push_back(tmp);
         }
 
-        std::cout <<"vector_words[0] "<<vector_words[0]<<std::endl;
-        std::cout <<"vector_words[1] "<<vector_words[1]<<std::endl;
+//        std::cout <<"vector_words[0] "<<vector_words[0]<<std::endl;
+//        std::cout <<"vector_words[1] "<<vector_words[1]<<std::endl;
 
         if (vector_words[0] == std::string("new")) {//cmd >>> new <sequence> [@<sequence_name>]
-            std::cout << "new command\n";
+//            std::cout << "new command\n";
 //            parser.add(details);
 //            std::cout << vector_words;
             std::cout << vector_words[1];
@@ -79,7 +146,7 @@ inline void CommandLine::GetCommand() {
         }
     }
 }
-//inline void CommandLine::CommandParser() {
+//inline void CommandLineInterface::CommandParser() {
 //    try
 //    {
 //        Parser parser;
