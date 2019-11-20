@@ -20,12 +20,9 @@ public:
 };
 
 inline DnaSequence *DupCreatorDnaSequence::CreateDnaSequence(const DnaSequence &other) {
-//    ReaderDnaSequence readerDnaSequence;
-//    std::string str = readerDnaSequence.ReadDnaSequenceFromFile(file_name);//read dna from file
-//    DnaSequence dna_file(ReadDnaSequenceFromFile(file_name));
-//    DnaSequence &other;
+
     return new DnaSequence(other);
-//    return  &dna_file;
+
 }
 
 #endif //SRC_DUPDNASEQUENCE_H
