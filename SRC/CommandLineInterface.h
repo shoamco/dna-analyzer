@@ -14,7 +14,9 @@
 #include <map>
 #include "DnaCreatorFactory.h"
 #include "NewCreatorDnaSequence.h"
+#include "DupCreatorDnaSequence.h"
 #include "vector"
+#include "DnaRecords.h"
 /**
  *                   Command Line Interface
   The command line interface allows interaction with the user.Throughout that interface,
@@ -115,33 +117,50 @@ inline void CommandLineInterface::GetCommand() {
         getline(std::cin,input_line);
         std::cout << "cmd:  " << cmd << std::endl;
         std::string tmp;
+        DnaSequence *dna;
+        DnaRecords* dna_records;
         std::vector<std::string> vector_words;
         std::stringstream ss(input_line); // Turn the string into a stream.
         while(getline(ss, tmp,' ')){
             if (tmp.compare(""))
                 vector_words.push_back(tmp);
         }
+        int dna_id = 0;
 
-//        std::cout <<"vector_words[0] "<<vector_words[0]<<std::endl;
-//        std::cout <<"vector_words[1] "<<vector_words[1]<<std::endl;
-
-        if (vector_words[0] == std::string("new")) {//cmd >>> new <sequence> [@<sequence_name>]
-//            std::cout << "new command\n";
-//            parser.add(details);
-//            std::cout << vector_words;
+        if(vector_words[0] == std::string("new")) {//cmd >>> new <sequence> [@<sequence_name>]
             std::cout << vector_words[1];
+            std::string dna_name = vector_words[2];
+
+//            memmove(str + begin, str + begin + len, l - len + 1);
+            std::cout <<"\n dna name "<<dna_name<<std::endl;
             NewCreatorDnaSequence newCreatorDnaSequence;
-            DnaSequence *dna = newCreatorDnaSequence.CreateDnaSequence(vector_words[1]);
-            std::cout<<*dna;
-
-
-
+            dna = newCreatorDnaSequence.CreateDnaSequence(vector_words[1]);
+            std::cout<<*dna<<std::endl;
+            dna_records =new DnaRecords( dna ,dna_id,dna_name);
+            std::cout<<"dna name"<<dna_records->dna_name<<std::endl;
 
 
         }
+        if(vector_words[0] == std::string("dup")) {//cmd >>> new <sequence> [@<sequence_name>]
+
+            std::cout << vector_words[1];
+            NewCreatorDnaSequence newCreatorDnaSequence;
+
+//            DupCreatorDnaSequence dupCreatorDnaSequence;
+//            DnaSequence other = newCreatorDnaSequence.CreateDnaSequence("ATATAT");
+//            DnaSequence *dna = dupCreatorDnaSequence.CreateDnaSequence(other);
+//            std::cout<<*dna;
+        }
         if (vector_words[0] == "load") {
 //            parser.load(details);
+
             std::cout << "load command\n";
+
+        }
+        if (vector_words[0] == "len"){//> cmd >>> len #34
+//            int id = vector_words[1];
+
+            std::cout<<"dna len"<<dna_records->dna_sequence->GetSizeDnaSequence()<<std::endl;
 
         }
     }
