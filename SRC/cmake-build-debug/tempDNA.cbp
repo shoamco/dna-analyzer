@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tempDNA"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tempDNA">
+				<Option output="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/tempDNA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tempDNA"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tempDNA/fast">
+				<Option output="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/tempDNA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 tempDNA/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Controller/DnaCreatorFactory.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Controller/DupCreatorDnaSequence.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Controller/NewCreatorDnaSequence.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Main.cpp">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Model/DnaSequence.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Model/Nucleotide.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/Model/NucleotideException.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/View/CLI.h">
+			<Option target="tempDNA"/>
+		</Unit>
+		<Unit filename="/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -4,17 +4,17 @@ TARGET=Main
 
 # all .cpp files in this directory are my sources
 
-SOURCES=$(wildcard *.cpp)
+SOURCES=$(wildcard *.cpp) $(wildcard */*.cpp) $(wildcard */*/*.cpp)
 
 OBJS=$(SOURCES:.cpp=.o)
 
-INC_FLAGS=-I../include
+INC_DIR=../include
 CC=g++
 
 
 #CFLAGS=-pedantic -Wall -Werror -Wconversion -ansi -g $(INC_FLAGS)
 #CFLAGS=-pedantic -Wall -Wconversion -ansi -g $(INC_FLAGS)
-CFLAGS=-std=c++98 -Wall -pedantic -Wconversion -Wconversion -ansi -g $(INC_FLAGS)-D_DEBUG=m
+CFLAGS=-std=c++98 -Wall -pedantic -Wconversion -Wconversion -ansi -g -I$(INC_DIR) -D_DEBUG=m
 #CFLAGS=-std=gnu90 -g $(INC_FLAGS)
 
 CXXFLAGS=$(CFLAGS)
