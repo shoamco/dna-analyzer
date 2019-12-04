@@ -1,21 +1,14 @@
+#include <iostream>
+#include "Model/DnaRecord.h"
+#include "Model/DnaSequence.h"
+#include "View/CLI.h"
+#include "Controller/RunApplication.h"
+int main() {
+//    DnaSequence dnaSequence("ATAAT");
+//    DnaRecord dnaRecord(dnaSequence, "shoam", 9383747);
+//    std::cout<<dnaRecord;
+RunApplication runApplication;
+runApplication.run();
 
-
-#include <gtest/gtest.h>
-
-#include "TestDnaSequence.h"
-
-/*
-
-g++ -ansi -pedantic -Wall -Wconversion  Main.cpp DnaSequence.h Nucleotide.h TestDnaSequence.cpp TestDnaSequence.h DnaCreatorFactory.h NewCreatorDnaSequence.h CommandLine.h -lgtest -lgtest_main -pthread -o test
-
-
- */
-
-
-
-int main(int argc, char *argv[]) {
-    test_dna();
-    testing::InitGoogleTest(&argc, argv);
-
-    return RUN_ALL_TESTS();
+    return 0;
 }
