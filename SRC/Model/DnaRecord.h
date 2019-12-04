@@ -11,6 +11,8 @@ class DnaRecord{
 public:
     DnaRecord(DnaSequence dna, std::string name, size_t id);
     friend std::ostream &operator<<(std::ostream &ostream, const DnaRecord dnaRecord);
+    std::string getName() const;
+    size_t  getId() const;
 private:
     DnaSequence dnaSequence;
     std::string name;
@@ -26,5 +28,11 @@ inline std::ostream &operator<<(std::ostream &ostream, const DnaRecord dnaRecord
 
     return ostream << std::endl;
 }
+std::string DnaRecord::getName() const{
+    return name;
+}
+size_t  DnaRecord::getId() const{
+    return id;
 
+}
 #endif //TEMPDNA_DNARECORD_H
