@@ -14,10 +14,23 @@ this class create a dna sequence from a given  string,
  * **/
 class NewCreatorDnaSequence:public DnaCreatorFactory{
 public:
-    /*virtual*/  DnaSequence* CreateDnaSequence(VectorWords vec);//factory method
+    /*virtual*/  DnaRecord* CreateDnaSequence(VectorWords vec);//factory method
 
 };
-inline  DnaSequence* NewCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
-    return new DnaSequence(vec[1]);
+inline  DnaRecord* NewCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
+    //name of dna ,if not given a name ,enter default name (str+id)
+
+
+    std::ostringstream ostr; //output string stream
+    ostr << DnaCreatorFactory::s_id ; //use the string stream just like cout,
+    //except the stream prints not to stdout but to a string.
+
+    std::string id = ostr.str();
+
+    std::string name= vec.size()>2 ? vec[2]: std::string("str")+id ;
+
+
+    return new DnaRecord( *(new DnaSequence(vec[1])),name,DnaCreatorFactory::s_id++);
+
 }
 #endif //SRC_NEWDNASEQUENCE_H

@@ -6,6 +6,8 @@
 #define TEMPDNA_RUNAPPLICATION_H
 
 #include "../View/CLI.h"
+//typedef std::pair<std::string, DnaCreatorFactory*> PairCommand;
+typedef std::map<std::string, DnaCreatorFactory *> CommandMap;
 class RunApplication{
 public:
     void run();
@@ -29,7 +31,7 @@ void RunApplication::run(){
 //        std::cout << "enter command ";
         VectorWords vectorWords=s_cli.get_input();
         std::string command=vectorWords[0];
-        DnaSequence *dna=s_map_command[command]->CreateDnaSequence(vectorWords);
+        DnaRecord *dna=s_map_command[command]->CreateDnaSequence(vectorWords);
 //        DnaSequence *dna = newCreatorDnaSequence.CreateDnaSequence(vector_words[1]);
         std::cout<<*dna;
 

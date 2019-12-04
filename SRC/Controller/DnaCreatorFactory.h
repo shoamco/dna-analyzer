@@ -17,13 +17,18 @@ typedef std::vector<std::string> VectorWords;
  and will need to implement\redefine the Factory Method(CreateDnaSequence)
   in there way-Flexible
  * **/
+#include <iostream>
+#include <sstream>
+#include <string>
 
 class DnaCreatorFactory{
 public:
 //     DnaCreatorFactory();
-    virtual  DnaSequence* CreateDnaSequence( VectorWords vec)=0;//factory method
+    virtual  DnaRecord* CreateDnaSequence( VectorWords vec)=0;//factory method
 //    virtual ~DnaCreatorFactory(){}
+//private:
+    static size_t s_id;
 
 };
-
+size_t DnaCreatorFactory::s_id=0;
 #endif //SRC_DNACREATORFACTORY_H

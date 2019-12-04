@@ -15,11 +15,14 @@ this class Duplication a dna sequence from anther dna sequence ,
  * **/
 class DupCreatorDnaSequence :public DnaCreatorFactory {
 public:
-    /*virtual*/  DnaSequence *CreateDnaSequence( VectorWords vec);//factory method
+    /*virtual*/  DnaRecord *CreateDnaSequence( VectorWords vec);//factory method
 
 };
 
-inline  DnaSequence* DupCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
-    return new DnaSequence(vec[1]);//todo change to return new DnaSequence(other);
+inline  DnaRecord* DupCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
+
+    std::string name=vec[2];
+    return new DnaRecord( *(new DnaSequence(vec[1])),name,2);//todo change to return new DnaSequence(other);
+
 }
 #endif //SRC_DUPDNASEQUENCE_H

@@ -1,0 +1,8 @@
+//
+// Created by shoam on 12/4/19.
+//
+
+#ifndef TEMPDNA_DNACOLLECTION_H
+#define TEMPDNA_DNACOLLECTION_H
+
+#endif //TEMPDNA_DNACOLLECTION_H
