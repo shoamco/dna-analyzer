@@ -1,3 +1,0 @@
-/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/CMakeFiles/tempDNA.dir
-/home/shoam/Desktop/course/dna-analyzer-design-shoamco/SRC/cmake-build-debug/CMakeFiles/edit_cache.dir
