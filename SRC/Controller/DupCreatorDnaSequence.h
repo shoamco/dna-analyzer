@@ -22,7 +22,7 @@ public:
 inline  DnaRecord* DupCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
 
     std::string name=vec[2];
-    return new DnaRecord( *(new DnaSequence(vec[1])),name,2);//todo change to return new DnaSequence(other);
+    return  new DnaRecord( new  DnaSequence(vec[1]),name,2);//todo change to return new DnaSequence(other);
 
 }
 #endif //SRC_DUPDNASEQUENCE_H

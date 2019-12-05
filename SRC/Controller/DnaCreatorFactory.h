@@ -24,7 +24,7 @@ typedef std::vector<std::string> VectorWords;
 class DnaCreatorFactory{
 public:
 //     DnaCreatorFactory();
-    virtual  DnaRecord* CreateDnaSequence( VectorWords vec)=0;//factory method
+    virtual  DnaRecord *CreateDnaSequence( VectorWords vec)=0;//factory method
 //    virtual ~DnaCreatorFactory(){}
 //private:
     static size_t s_id;

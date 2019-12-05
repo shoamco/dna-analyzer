@@ -6,6 +6,7 @@
 #define TEMPDNA_RUNAPPLICATION_H
 
 #include "../View/CLI.h"
+#include "../Model/DnaCollection.h"
 //typedef std::pair<std::string, DnaCreatorFactory*> PairCommand;
 typedef std::map<std::string, DnaCreatorFactory *> CommandMap;
 class RunApplication{
@@ -27,17 +28,24 @@ CommandMap RunApplication::s_map_command=init_map_command();/*Initialize map of 
 CLI RunApplication::s_cli=CLI();/*Initialize static  cli object*/
 
 void RunApplication::run(){
+    VectorWords vectorWords;
+    std::string command;
+    DnaCollection dnaCollection;
+
     while (1) {
-//        std::cout << "enter command ";
-        VectorWords vectorWords=s_cli.get_input();
-        std::string command=vectorWords[0];
-        DnaRecord *dna=s_map_command[command]->CreateDnaSequence(vectorWords);
-//        DnaSequence *dna = newCreatorDnaSequence.CreateDnaSequence(vector_words[1]);
-        std::cout<<*dna;
+         vectorWords=s_cli.get_input();//get input from CLI=vectorWords[0];//name of command
+         command=vectorWords[0];
+
+        DnaRecord *dnaRecord=s_map_command[command]->CreateDnaSequence(vectorWords);//creat dnaRecord
+
+//        std::cout<<"dnaRecord->getName()"<<dnaRecord->getName()<<std::endl;
+//        dnaCollection.map_dna_name[dnaRecord->getName()]=dnaRecord;//enter dna record to map collection
+//        dnaCollection.map_dna_name[std::string("hhyh")]=dnaRecord;//enter dna record to map collection
+//        dnaCollection.map_dna_id[dnaRecord->getId()]=*dnaRecord;
 
 
-//        std::string input_line;
-//        getline(std::cin,input_line);
+        std::cout<<*dnaRecord;
+
     }
 }
 #endif //TEMPDNA_RUNAPPLICATION_H
