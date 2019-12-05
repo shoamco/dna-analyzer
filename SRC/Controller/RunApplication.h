@@ -37,14 +37,11 @@ void RunApplication::run(){
          command=vectorWords[0];
 
         DnaRecord *dnaRecord=s_map_command[command]->CreateDnaSequence(vectorWords);//creat dnaRecord
-
-//        std::cout<<"dnaRecord->getName()"<<dnaRecord->getName()<<std::endl;
-//        dnaCollection.map_dna_name[dnaRecord->getName()]=dnaRecord;//enter dna record to map collection
-//        dnaCollection.map_dna_name[std::string("hhyh")]=dnaRecord;//enter dna record to map collection
-//        dnaCollection.map_dna_id[dnaRecord->getId()]=*dnaRecord;
-
-
         std::cout<<*dnaRecord;
+
+      dnaCollection.add_dna_to_maps(dnaRecord);
+
+
 
     }
 }
