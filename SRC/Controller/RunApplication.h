@@ -40,6 +40,7 @@ void RunApplication::run(){
         std::cout<<*dnaRecord;
 
       dnaCollection.add_dna_to_maps(dnaRecord);
+      std::cout<<dnaCollection;
 
 
 
