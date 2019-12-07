@@ -21,13 +21,18 @@ public:
     DnaRecord * getDnaRecordById(size_t);
 
 private:
-    std::map<std::string, DnaRecord *> map_dna_name;
-    std::map<size_t, DnaRecord *> map_dna_id;
+     std::map<std::string, DnaRecord *> map_dna_name;//todo:static
+     std::map<size_t, DnaRecord *> map_dna_id;
 
 
 };
-//dnaCollection.map_dna_name[dnaRecord->getName()]=dnaRecord;//enter dna record to map collection
-//dnaCollection.map_dna_id[dnaRecord->getId()]=dnaRecord;
+
+inline DnaRecord * DnaCollection::getDnaRecordByName(std::string name){
+    return map_dna_name[name];
+}
+inline DnaRecord * DnaCollection::getDnaRecordById(size_t id){
+    return map_dna_id[id];
+}
 
 void DnaCollection::add_dna_to_maps(DnaRecord *dnaRecord) {
     add_dna_to_map_name(dnaRecord);
