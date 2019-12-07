@@ -15,6 +15,10 @@ public:
     void add_dna_to_map_id(DnaRecord *dnaRecord);
 
     void add_dna_to_maps(DnaRecord *dnaRecord);
+    friend std::ostream &operator<<(std::ostream &ostream, const DnaCollection dnaCollection);
+
+    DnaRecord * getDnaRecordByName(std::string);
+    DnaRecord * getDnaRecordById(size_t);
 
 private:
     std::map<std::string, DnaRecord *> map_dna_name;
@@ -36,6 +40,15 @@ void DnaCollection::add_dna_to_map_name(DnaRecord *dnaRecord) {
 
 void DnaCollection::add_dna_to_map_id(DnaRecord *dnaRecord) {
     map_dna_id[dnaRecord->getId()] = dnaRecord;
+}
+inline std::ostream &operator<<(std::ostream &ostream, const DnaCollection dnaCollection){
+    ostream << "Dna Collection: \n";
+    for(std::map<std::string,DnaRecord * >::const_iterator it = dnaCollection.map_dna_name.begin();
+            it !=  dnaCollection.map_dna_name.end(); ++it)
+    {
+        ostream  <<  it->first<<it->second<<std::endl;
+    }
+    return  ostream <<std::endl;
 }
 
 #endif //TEMPDNA_DNACOLLECTION_H

@@ -22,6 +22,7 @@ public:
     Nucleotide *GetDnaSequence() const;
 
     friend std::ostream &operator<<(std::ostream &os, const DnaSequence dnaSequence);
+    friend std::ostream &operator<<(std::ostream &os, const DnaSequence* dnaSequence);
 
     DnaSequence &operator=(const DnaSequence &other);
 
@@ -128,7 +129,9 @@ inline std::ostream &operator<<(std::ostream &ostream, const DnaSequence dnaSequ
         ostream << dnaSequence.m_dna_sequence[i].GetNucleotide();
     return ostream << std::endl;
 }
-
+inline std::ostream &operator<<(std::ostream &ostream, const DnaSequence* dnaSequence){
+    return operator<<(ostream,*dnaSequence);
+}
 inline bool operator==(const DnaSequence &dna1, const DnaSequence &dna2){
     bool ans = true;
     if (dna1.GetSizeDnaSequence() != dna2.GetSizeDnaSequence()) {
