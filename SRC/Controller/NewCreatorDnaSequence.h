@@ -20,12 +20,9 @@ public:
 inline  DnaRecord* NewCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
     //name of dna ,if not given a name ,enter default name (str+id)
 
-    std::ostringstream ostr;
-    ostr << DnaCreatorFactory::s_id ;
 
-    std::string id = ostr.str();
 
-    std::string name= vec.size()>2 ? vec[2]: std::string("str")+id ;
+    std::string name= vec.size()>2 ? vec[2]:getDefaultName() ;
 
 
     return  new DnaRecord(new DnaSequence(vec[1]) ,name,DnaCreatorFactory::s_id++);

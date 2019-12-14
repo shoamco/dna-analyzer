@@ -25,10 +25,19 @@ class DnaCreatorFactory{
 public:
 //     DnaCreatorFactory();
     virtual  DnaRecord *CreateDnaSequence( VectorWords vec)=0;//factory method
+    std::string getDefaultName();
 //    virtual ~DnaCreatorFactory(){}
 //private:
     static size_t s_id;
 
 };
+inline std::string  DnaCreatorFactory::getDefaultName(){
+    std::ostringstream ostr;
+    ostr << DnaCreatorFactory::s_id ;
+
+    std::string id = ostr.str();
+    return  std::string("str")+id;
+}
+
 size_t DnaCreatorFactory::s_id=0;
 #endif //SRC_DNACREATORFACTORY_H

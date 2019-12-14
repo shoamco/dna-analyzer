@@ -25,7 +25,9 @@ inline DnaRecord *DupCreatorDnaSequence::CreateDnaSequence(VectorWords vec) {
     // dup <seq> [@<new_seq_name>]
     //dup #22
     std::cout << "dna id" << vec[1] << std::endl;
-    std::string name = vec[2];
+
+    std::string name= vec.size()>2 ? vec[2]:getDefaultName() ;
+
     std::stringstream ss;
     ss << (vec[1]);
     int id;
