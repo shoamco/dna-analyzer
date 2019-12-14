@@ -32,6 +32,7 @@ public:
 
 };
 inline std::string  DnaCreatorFactory::getDefaultName(){
+    /**return default name (str+id)*/
     std::ostringstream ostr;
     ostr << DnaCreatorFactory::s_id ;
 
