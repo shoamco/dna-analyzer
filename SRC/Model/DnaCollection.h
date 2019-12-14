@@ -23,7 +23,9 @@ public:
     static DnaRecord *getDnaRecordById(size_t);
 
 private:
-    static std::map<std::string, DnaRecord *> map_dna_name;//todo:static
+
+
+    static std::map<std::string, DnaRecord *> map_dna_name;//todo:DnaRecord unique_ptr
     static std::map<size_t, DnaRecord *> map_dna_id;
 
 
@@ -31,13 +33,13 @@ private:
 
 
 
-inline std::map<std::string, DnaRecord *> init_map() {
-    std::map<std::string, DnaRecord *> map;
+//inline std::map<std::string, DnaRecord *> init_map() {
+//    std::map<std::string, DnaRecord *> map;
+//
+//    return map;
+//}
 
-    return map;
-}
-
-inline std::map<std::string, DnaRecord *>DnaCollection::map_dna_name = init_map();
+inline std::map<std::string, DnaRecord *>DnaCollection::map_dna_name;
 inline std::map<size_t, DnaRecord *> DnaCollection::map_dna_id;
 
 inline DnaRecord *DnaCollection::getDnaRecordByName(std::string name) {
