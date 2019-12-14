@@ -5,6 +5,8 @@
 #ifndef SRC_DUPDNASEQUENCE_H
 #define SRC_DUPDNASEQUENCE_H
 
+#include "../Model/DnaCollection.h"
+
 #include "DnaCreatorFactory.h"
 //#include "ReaderDnaSequence.h"
 /**
@@ -13,18 +15,27 @@ this class Duplication a dna sequence from anther dna sequence ,
  this class is part of Factory Method,is heiress from DnaCreatorFactory(abstract class)
  and implement the function CreateDnaSequence, that create DNA sequence from anther dna sequence
  * **/
-class DupCreatorDnaSequence :public DnaCreatorFactory {
+class DupCreatorDnaSequence : public DnaCreatorFactory {
 public:
-    /*virtual*/  DnaRecord *CreateDnaSequence( VectorWords vec);//factory method
+    /*virtual*/  DnaRecord *CreateDnaSequence(VectorWords vec);//factory method
 
 };
 
-inline  DnaRecord* DupCreatorDnaSequence::CreateDnaSequence( VectorWords vec){
+inline DnaRecord *DupCreatorDnaSequence::CreateDnaSequence(VectorWords vec) {
+    // dup <seq> [@<new_seq_name>]
+    //dup #22
+    std::cout << "dna id" << vec[1] << std::endl;
+    std::string name = vec[2];
+    std::stringstream ss;
+    ss << (vec[1]);
+    int id;
+    ss >> id;
 
-    std::string name=vec[2];
-//    std::string name=vec[3];
 
-    return  new DnaRecord( new  DnaSequence(vec[1]),name,2);//todo change to return new DnaSequence(other);
+    DnaRecord *dnaRecord = DnaCollection::getDnaRecordById(id);
+    return new DnaRecord(new DnaSequence(*(dnaRecord->getDnaSequence())), name, DnaCreatorFactory::s_id++);
+    //todo change to return new DnaSequence(other);
 
 }
+
 #endif //SRC_DUPDNASEQUENCE_H
